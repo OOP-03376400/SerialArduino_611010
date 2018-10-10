@@ -40,6 +40,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -148,11 +149,27 @@
             this.textBox1.Size = new System.Drawing.Size(304, 122);
             this.textBox1.TabIndex = 7;
             // 
+            // zedGraphControl1
+            // 
+            this.zedGraphControl1.Location = new System.Drawing.Point(12, 152);
+            this.zedGraphControl1.Name = "zedGraphControl1";
+            this.zedGraphControl1.ScrollGrace = 0D;
+            this.zedGraphControl1.ScrollMaxX = 0D;
+            this.zedGraphControl1.ScrollMaxY = 0D;
+            this.zedGraphControl1.ScrollMaxY2 = 0D;
+            this.zedGraphControl1.ScrollMinX = 0D;
+            this.zedGraphControl1.ScrollMinY = 0D;
+            this.zedGraphControl1.ScrollMinY2 = 0D;
+            this.zedGraphControl1.Size = new System.Drawing.Size(655, 274);
+            this.zedGraphControl1.TabIndex = 8;
+            this.zedGraphControl1.UseExtendedPrintDialog = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(696, 462);
+            this.Controls.Add(this.zedGraphControl1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.listBox1);
@@ -179,6 +196,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
+        private ZedGraph.ZedGraphControl zedGraphControl1;
     }
 }
 
