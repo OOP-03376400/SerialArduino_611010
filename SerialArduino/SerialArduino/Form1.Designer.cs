@@ -173,7 +173,6 @@
             // 
             // generateData
             // 
-            this.generateData.Enabled = true;
             this.generateData.Interval = 10;
             this.generateData.Tick += new System.EventHandler(this.generateData_Tick);
             // 

@@ -34,11 +34,56 @@ namespace SerialArduino
             Console.WriteLine(str);
             // 4. Invoke delegate
             textBox1.Invoke(myDelegate, str);
-
-
-
+            procecssSerialText(str);
         }
 
+        int StateMachine = 0;
+        StringBuilder stringBuffer = new StringBuilder();
+        private void procecssSerialText(string str)
+        {
+            foreach (char c in str)
+            {
+                switch (StateMachine)
+                {
+                    case 0:
+                        if (c == '\r')
+                        {
+                            StateMachine = 1;
+                        }
+                        else
+                        {
+                            stringBuffer.Append(c);
+                        }
+                        break;
+                    case 1:
+                        if (c == '\n')
+                        {
+                            AddChartData(stringBuffer.ToString());
+
+                        }
+                        // after parsing the message we reset the state machine
+                        stringBuffer = new StringBuilder();
+                        StateMachine = 0;
+                        break;
+                }
+            }            
+        }
+
+        private void AddChartData(string v)
+        {
+            string[] s = v.Split(new char[] { ',' });
+            if (s.Length < 2)
+                return;
+            bool isNumerical = int.TryParse(s[0], out int myInt);
+            if (isNumerical == false)
+                return;
+            int _no = Convert.ToInt32(s[0]);
+            bool isdouble = double.TryParse(s[0], out double mydouble);
+            if (isdouble == false)
+                return;
+            double _raw_y = Convert.ToDouble(s[1]);
+            points.Add(_no, _raw_y);
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -47,7 +92,6 @@ namespace SerialArduino
             listBox1.Items.AddRange(ports);
             comboBox1.Items.Clear();
             comboBox1.Items.AddRange(ports);
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -70,7 +114,7 @@ namespace SerialArduino
             {
                 return;
             }
-            else
+            else 
             {
                 serialPort1.Close();
                 button2.Enabled = true;
