@@ -42,6 +42,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.graphUpdate = new System.Windows.Forms.Timer(this.components);
+            this.generateData = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -167,7 +168,14 @@
             // 
             // graphUpdate
             // 
+            this.graphUpdate.Enabled = true;
             this.graphUpdate.Tick += new System.EventHandler(this.graphUpdate_Tick);
+            // 
+            // generateData
+            // 
+            this.generateData.Enabled = true;
+            this.generateData.Interval = 10;
+            this.generateData.Tick += new System.EventHandler(this.generateData_Tick);
             // 
             // Form1
             // 
@@ -204,6 +212,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private ZedGraph.ZedGraphControl zedGraphControl1;
         private System.Windows.Forms.Timer graphUpdate;
+        private System.Windows.Forms.Timer generateData;
     }
 }
 

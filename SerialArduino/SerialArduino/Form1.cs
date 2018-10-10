@@ -34,6 +34,9 @@ namespace SerialArduino
             Console.WriteLine(str);
             // 4. Invoke delegate
             textBox1.Invoke(myDelegate, str);
+
+
+
         }
 
 
@@ -95,9 +98,14 @@ namespace SerialArduino
         GraphPane myPane;
         RollingPointPairList points;
         LineItem myCurve;
+        double sinPart;
+        int i;
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            sinPart = 2 * Math.PI / 5000;
+            i = 0;
+
             zedGraphControl1.IsShowHScrollBar = true;
             zedGraphControl1.IsAutoScrollRange = true;
 
@@ -123,6 +131,20 @@ namespace SerialArduino
         {
             zedGraphControl1.AxisChange();
             zedGraphControl1.Invalidate();
+        }
+
+        private void generateData_Tick(object sender, EventArgs e)
+        {
+            for (int j = 0; j < 50; j++)
+            {
+                i++;
+                points.Add(i, Math.Sin(sinPart * i));
+            }
+
+            if (i >= 15000)
+            {
+                generateData.Enabled = false;
+            }
         }
     }
 }
