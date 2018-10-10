@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
+using ZedGraph;
 
 namespace SerialArduino
 {
@@ -91,7 +92,31 @@ namespace SerialArduino
             textBox1.AppendText(str);   
         }
 
+        GraphPane myPane;
+        RollingPointPairList points;
+        LineItem myCurve;
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            zedGraphControl1.IsShowHScrollBar = true;
+            zedGraphControl1.IsAutoScrollRange = true;
 
+            myPane = zedGraphControl1.GraphPane;
+
+            myPane.YAxis.Scale.Min = -1.2;
+            myPane.YAxis.Scale.Max = 1.2;
+            myPane.YAxis.Scale.MajorStep = 1;
+            myPane.YAxis.Scale.MinorStep = 1;
+
+            myPane.XAxis.Scale.MajorStep = 1000;
+            myPane.XAxis.Scale.MinorStep = 1000;
+            myPane.XAxis.Scale.Format = "#";
+            myPane.XAxis.Scale.Mag = 0;
+            myPane.XAxis.Scale.Min = 0;
+            myPane.XAxis.Scale.Max = 5000;
+
+            points = new RollingPointPairList(15000);
+            myCurve = myPane.AddCurve("Sine wave", points, Color.Blue, SymbolType.None);
+        }
     }
 }
