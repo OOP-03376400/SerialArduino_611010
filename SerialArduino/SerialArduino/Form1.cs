@@ -118,5 +118,11 @@ namespace SerialArduino
             points = new RollingPointPairList(15000);
             myCurve = myPane.AddCurve("Sine wave", points, Color.Blue, SymbolType.None);
         }
+
+        private void graphUpdate_Tick(object sender, EventArgs e)
+        {
+            zedGraphControl1.AxisChange();
+            zedGraphControl1.Invalidate();
+        }
     }
 }

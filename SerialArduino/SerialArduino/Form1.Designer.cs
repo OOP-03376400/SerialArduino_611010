@@ -41,7 +41,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.graphUpdate = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -165,6 +165,10 @@
             this.zedGraphControl1.TabIndex = 8;
             this.zedGraphControl1.UseExtendedPrintDialog = true;
             // 
+            // graphUpdate
+            // 
+            this.graphUpdate.Tick += new System.EventHandler(this.graphUpdate_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,7 +203,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
         private ZedGraph.ZedGraphControl zedGraphControl1;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer graphUpdate;
     }
 }
 
