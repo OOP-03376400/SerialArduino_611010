@@ -13,10 +13,28 @@ namespace SerialArduino
 {
     public partial class Form1 : Form
     {
+        // 1. declare delegate
+        public delegate void AddDataDelegate(string str);
+
+        // 2. define delegate
+        public AddDataDelegate myDelegate;
+
         public Form1()
         {
             InitializeComponent();
+        // 3. create delegate object
+            myDelegate = new AddDataDelegate(AddData);
         }
+
+        private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            SerialPort sp = (SerialPort)sender;
+            string str = sp.ReadExisting();
+            Console.WriteLine(str);
+            // 4. Invoke delegate
+            textBox1.Invoke(myDelegate, str);
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -68,11 +86,12 @@ namespace SerialArduino
 
         }
 
-        private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        public void AddData(string str)
         {
-            SerialPort sp = (SerialPort)sender;
-            string str = sp.ReadExisting();
-            Console.WriteLine(str);
+            textBox1.AppendText(str);   
         }
+
+
+
     }
 }
