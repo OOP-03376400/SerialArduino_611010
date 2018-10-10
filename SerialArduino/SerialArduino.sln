@@ -5,15 +5,6 @@ VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerialArduino", "SerialArduino\SerialArduino.csproj", "{D20D777E-64C0-4C5C-982F-4BF67A78DAD7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Arduino_project", "Arduino_project", "{FE1A5785-1C63-40A9-ACBB-0E481D8BFC04}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hello_World", "Hello_World", "{B62B8F77-9F63-4ADA-A721-0382098FF300}"
-	ProjectSection(SolutionItems) = preProject
-		readme.md = readme.md
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Generate_sine_wave", "Generate_sine_wave", "{E45B41CE-FD77-4921-AF68-8C8BCB5FD934}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,10 +18,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{B62B8F77-9F63-4ADA-A721-0382098FF300} = {FE1A5785-1C63-40A9-ACBB-0E481D8BFC04}
-		{E45B41CE-FD77-4921-AF68-8C8BCB5FD934} = {FE1A5785-1C63-40A9-ACBB-0E481D8BFC04}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7DDFEBD6-AF6F-48B6-A794-78A24200C4AB}
