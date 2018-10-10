@@ -8,6 +8,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Arduino_project", "Arduino_project", "{FE1A5785-1C63-40A9-ACBB-0E481D8BFC04}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hello_World", "Hello_World", "{B62B8F77-9F63-4ADA-A721-0382098FF300}"
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Generate_sine_wave", "Generate_sine_wave", "{E45B41CE-FD77-4921-AF68-8C8BCB5FD934}"
 EndProject
