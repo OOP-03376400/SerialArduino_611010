@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerialArduino", "SerialArduino\SerialArduino.csproj", "{D20D777E-64C0-4C5C-982F-4BF67A78DAD7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D20D777E-64C0-4C5C-982F-4BF67A78DAD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D20D777E-64C0-4C5C-982F-4BF67A78DAD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D20D777E-64C0-4C5C-982F-4BF67A78DAD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D20D777E-64C0-4C5C-982F-4BF67A78DAD7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7DDFEBD6-AF6F-48B6-A794-78A24200C4AB}
+	EndGlobalSection
+EndGlobal
