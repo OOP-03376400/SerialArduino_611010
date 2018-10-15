@@ -25,15 +25,20 @@ namespace SerialArduino
             InitializeComponent();
         // 3. create delegate object
             myDelegate = new AddDataDelegate(AddData);
+            if (zedGraphControl1.GraphPane != null)
+            {
+                zedGraphControl1.GraphPane = null;
+                zedGraphControl1.GraphPane = new GraphPane();
+            }
         }
 
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             SerialPort sp = (SerialPort)sender;
             string str = sp.ReadExisting();
-            Console.WriteLine(str);
+            //Console.WriteLine(str);
             // 4. Invoke delegate
-            textBox1.Invoke(myDelegate, str);
+           textBox1.Invoke(myDelegate, str);
             procecssSerialText(str);
         }
 
@@ -136,7 +141,7 @@ namespace SerialArduino
 
         public void AddData(string str)
         {
-            textBox1.AppendText(str);   
+           // textBox1.AppendText(str);   
         }
 
         GraphPane myPane;
@@ -189,6 +194,11 @@ namespace SerialArduino
             {
                 generateData.Enabled = false;
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            points.Clear();
         }
     }
 }

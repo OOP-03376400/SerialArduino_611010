@@ -43,6 +43,7 @@
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.graphUpdate = new System.Windows.Forms.Timer(this.components);
             this.generateData = new System.Windows.Forms.Timer(this.components);
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -176,11 +177,22 @@
             this.generateData.Interval = 10;
             this.generateData.Tick += new System.EventHandler(this.generateData_Tick);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(12, 432);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Clear Graph";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 462);
+            this.ClientSize = new System.Drawing.Size(747, 480);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.zedGraphControl1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox1);
@@ -212,6 +224,7 @@
         private ZedGraph.ZedGraphControl zedGraphControl1;
         private System.Windows.Forms.Timer graphUpdate;
         private System.Windows.Forms.Timer generateData;
+        private System.Windows.Forms.Button button4;
     }
 }
 
