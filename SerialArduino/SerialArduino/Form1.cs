@@ -38,7 +38,9 @@ namespace SerialArduino
             string str = sp.ReadExisting();
             //Console.WriteLine(str);
             // 4. Invoke delegate
-           textBox1.Invoke(myDelegate, str);
+            // textBox1.Invoke(myDelegate, str);
+            Invoke(new MethodInvoker(() => { textBox1.AppendText(str); } ));
+
             procecssSerialText(str);
         }
 
