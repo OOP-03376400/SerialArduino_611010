@@ -14,17 +14,9 @@ namespace SerialArduino
 {
     public partial class Form1 : Form
     {
-        // 1. declare delegate
-        public delegate void AddDataDelegate(string str);
-
-        // 2. define delegate
-        public AddDataDelegate myDelegate;
-
         public Form1()
         {
             InitializeComponent();
-        // 3. create delegate object
-            myDelegate = new AddDataDelegate(AddData);
             if (zedGraphControl1.GraphPane != null)
             {
                 zedGraphControl1.GraphPane = null;
@@ -36,11 +28,7 @@ namespace SerialArduino
         {
             SerialPort sp = (SerialPort)sender;
             string str = sp.ReadExisting();
-            //Console.WriteLine(str);
-            // 4. Invoke delegate
-            // textBox1.Invoke(myDelegate, str);
             Invoke(new MethodInvoker(() => { textBox1.AppendText(str); } ));
-
             procecssSerialText(str);
         }
 
